@@ -1,0 +1,73 @@
+.login-contenedor {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 60px); /* Resto de la navbar */
+  background-image: linear-gradient(rgba(0, 0, 0, 0.288), rgba(0, 0, 0, 0.4)), 
+                    url('../assets/FondoLogin.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed; /* opcional: efecto parallax */
+  color: white; /* útil si quieres que los textos se lean bien */
+}
+
+
+.login-formulario {
+  background: rgba(255, 255, 255, 0.1); /* fondo blanco semi-transparente */
+  backdrop-filter: blur(12px); /* efecto desenfoque */
+  -webkit-backdrop-filter: blur(12px); /* soporte para Safari */
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 25px;
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.61);
+  padding: 2rem 3rem;
+  width: 100%;
+  max-width: 400px;
+  text-align: left;
+  font-family: 'Arial', sans-serif;
+  color: #fff; /* texto claro para fondo oscuro */
+}
+
+.login-formulario h2 {
+  margin-bottom: 1.5rem;
+  color: #fffefe;
+  text-align: center;
+}
+
+.login-formulario label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #ffffff;
+}
+
+.login-formulario input {
+  width: 100%;
+  padding: 0.6rem;
+  margin-bottom: 1.2rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+  font-size: 1rem;
+  backdrop-filter: blur(3px);
+}
+
+.login-formulario input::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.login-formulario button {
+  width: 100%;
+  padding: 0.8rem;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.login-formulario button:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}

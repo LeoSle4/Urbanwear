@@ -1,0 +1,112 @@
+.contenedor-menu-opciones {
+    position: fixed;
+    /* para que flote sobre todo y no se mueva con scroll */
+    top: 60px;
+    /* justo debajo del navbar (que entiendo tiene 60px de alto) */
+    left: 50%;
+    /* para centrar horizontalmente */
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 1rem;
+    /* eliminas margen top porque ya defines top fijo */
+    width: 90%;
+    max-width: 900px;
+    z-index: 1000;
+    padding: 0 1rem;
+    /* opcional, para que no toque bordes al ser fijo */
+}
+
+
+.menu-opciones {
+    padding: 1.5rem 2rem;
+    height: 3rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    display: flex;
+    align-items: center;
+}
+
+/* Aquí ajustamos el tamaño relativo */
+.menu-opciones.izquierda {
+    width: 100%;
+    flex: 3;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.575);
+    justify-content: center;
+}
+
+.menu-opciones.derecha {
+    flex: 1;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.575);
+}
+
+/* Menú izquierdo */
+.menu-izquierda ul {
+    display: flex;
+    gap: 3rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu-izquierda a {
+    color: #000000;
+    font-weight: 600;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.menu-izquierda a:hover {
+    color: #5c5656;
+}
+
+/* Menú derecho */
+.menu-derecha {
+    color: #000000;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    /* horizontal y vertical centrado */
+    gap: 1.8rem;
+    /* espacio entre texto y botón */
+    min-width: 150px;
+}
+
+.menu-derecha p {
+    margin: 0;
+    font-weight: 600;
+    white-space: nowrap;
+    /* que no se rompa el texto */
+}
+
+/* Botón circular pequeño solo con icono */
+.menu-derecha button {
+    background-color: rgb(255, 156, 156);
+    border: none;
+    color: #ffffff;
+    width: 32px;
+    height: 32px;
+    padding: 0;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s ease;
+}
+
+.menu-derecha button:hover {
+    background-color: rgb(248, 67, 67);
+}
+
+/* Ajusta el tamaño del SVG dentro del botón */
+.menu-derecha button svg {
+    width: 16px;
+    height: 16px;
+}

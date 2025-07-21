@@ -1,0 +1,38 @@
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  width: 400px;
+  max-width: 90%;
+}
+
+.campo {
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.campo input,
+.campo select {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+}
+
+.acciones {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+}

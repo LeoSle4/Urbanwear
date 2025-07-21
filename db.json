@@ -1,0 +1,187 @@
+{
+  "categorias": [
+    {
+      "id": 1,
+      "nombre": "Camisas y Polos",
+      "estado": "activo",
+      "descripcion": "Camisas formales y polos casuales para cualquier ocasión."
+    },
+    {
+      "id": 2,
+      "nombre": "Pantalones",
+      "estado": "activo",
+      "descripcion": "Pantalones para uso formal, casual o urbano."
+    },
+    {
+      "id": 3,
+      "nombre": "Sudaderas",
+      "estado": "activo",
+      "descripcion": "Sudaderas con capucha y diseños modernos para clima frío."
+    },
+    {
+      "id": 4,
+      "nombre": "Faldas y Vestidos",
+      "estado": "activo",
+      "descripcion": "Faldas y vestidos con estilo para ocasiones formales y casuales."
+    },
+    {
+      "id": 5,
+      "nombre": "Calzado",
+      "estado": "activo",
+      "descripcion": "Zapatos deportivos y cómodos para todo tipo de actividades."
+    },
+    {
+      "id": 6,
+      "nombre": "Chaquetas y Abrigos",
+      "estado": "activo",
+      "descripcion": "Chaquetas modernas y abrigos para protegerse del frío."
+    },
+    {
+      "id": 7,
+      "nombre": "Accesorios",
+      "estado": "activo",
+      "descripcion": "Accesorios de vestir como gorras y más."
+    }
+  ],
+  "productos": [
+    {
+      "id": 1,
+      "nombre": "Blusa Gris",
+      "descripcion": "Blusa gris de algodón suave y cómoda para uso diario.",
+      "precio": 29.99,
+      "stock": 20,
+      "imagen": "/src/assets/BlusaGris.jpg",
+      "categoriaId": 1
+    },
+    {
+      "id": 2,
+      "nombre": "Casaca Oversize Negra",
+      "descripcion": "Casaca oversize negra de estilo urbano y moderno.",
+      "precio": 49.99,
+      "stock": 10,
+      "imagen": "/src/assets/CasacaOverside.jpg",
+      "categoriaId": 6
+    },
+    {
+      "id": 3,
+      "nombre": "Casaca Urbana Roja",
+      "descripcion": "Casaca con capucha roja, ideal para un look urbano.",
+      "precio": 39.99,
+      "stock": 15,
+      "imagen": "/src/assets/CasacaUrbano.jpg",
+      "categoriaId": 6
+    },
+    {
+      "id": 4,
+      "nombre": "Chaqueta Elegante",
+      "descripcion": "Chaqueta elegante para eventos casuales o semiformal.",
+      "precio": 59.99,
+      "stock": 8,
+      "imagen": "/src/assets/Chaqueta.jpg",
+      "categoriaId": 6
+    },
+    {
+      "id": 5,
+      "nombre": "Chaqueta Mujer Beige",
+      "descripcion": "Chaqueta femenina con corte moderno y elegante.",
+      "precio": 69.99,
+      "stock": 25,
+      "imagen": "/src/assets/ChaquetaMujer.jpg",
+      "categoriaId": 6
+    },
+    {
+      "id": 6,
+      "nombre": "Jean Mujer Azul",
+      "descripcion": "Jean clásico azul para mujer, ideal para toda ocasión.",
+      "precio": 79.99,
+      "stock": 12,
+      "imagen": "/src/assets/JeanMujer.jpg",
+      "categoriaId": 2
+    },
+    {
+      "id": 7,
+      "nombre": "Pantalón Beige Mujer",
+      "descripcion": "Pantalón beige elegante con corte moderno.",
+      "precio": 34.99,
+      "stock": 30,
+      "imagen": "/src/assets/PantalonBiege.jpg",
+      "categoriaId": 2
+    },
+    {
+      "id": 8,
+      "nombre": "Polo Blanco",
+      "descripcion": "Polo blanco clásico, perfecto para combinar con cualquier prenda.",
+      "precio": 44.99,
+      "stock": 18,
+      "imagen": "/src/assets/PoloBlanco.jpg",
+      "categoriaId": 1
+    },
+    {
+      "id": 9,
+      "nombre": "Polo Negro Deportivo",
+      "descripcion": "Polo negro de estilo deportivo con excelente ventilación.",
+      "precio": 19.99,
+      "stock": 50,
+      "imagen": "/src/assets/PoloNegro.jpg",
+      "categoriaId": 1
+    }
+  ],
+  "clientes": [
+    {
+      "id": 1,
+      "nombre": "Andrea Gómez",
+      "correo": "andrea.gomez@example.com",
+      "telefono": "987654321",
+      "direccion": "Av. Los Pinos 123, Lima"
+    },
+    {
+      "id": 2,
+      "nombre": "Carlos Ruiz",
+      "correo": "carlos.ruiz@example.com",
+      "telefono": "951234567",
+      "direccion": "Jr. Las Flores 450, Arequipa"
+    },
+    {
+      "id": 3,
+      "nombre": "Lucía Herrera",
+      "correo": "lucia.herrera@example.com",
+      "telefono": "923456789",
+      "direccion": "Calle 12 de Octubre 678, Trujillo"
+    },
+    {
+      "id": 4,
+      "nombre": "Miguel Torres",
+      "correo": "miguel.torres@example.com",
+      "telefono": "980112233",
+      "direccion": "Av. Grau 321, Cusco"
+    },
+    {
+      "id": 5,
+      "nombre": "Valeria Fernández",
+      "correo": "valeria.fernandez@example.com",
+      "telefono": "999888777",
+      "direccion": "Calle Libertad 345, Piura"
+    },
+    {
+      "id": 6,
+      "nombre": "Pedro Martínez",
+      "correo": "pedro.martinez@example.com",
+      "telefono": "966554433",
+      "direccion": "Jr. San Martín 120, Chiclayo"
+    },
+    {
+      "id": 7,
+      "nombre": "Sofía Rojas",
+      "correo": "sofia.rojas@example.com",
+      "telefono": "988776655",
+      "direccion": "Av. Miraflores 789, Tacna"
+    },
+    {
+      "id": 8,
+      "nombre": "Javier Castro",
+      "correo": "javier.castro@example.com",
+      "telefono": "955443322",
+      "direccion": "Calle Bolívar 200, Iquitos"
+    }
+  ]
+}
