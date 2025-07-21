@@ -1,3 +1,4 @@
+// Components/ModalReutilizable.tsx
 import { useEffect, useState } from "react";
 import "../Styles/Componentes/ModalAgregadoReutilizable.css";
 
@@ -5,34 +6,35 @@ export interface Campo<T> {
   key: keyof T;
   label: string;
   type: "text" | "number" | "email" | "date" | "select";
-  options?: { label: string; value: string }[];
+  options?: { label: string; value: string | number }[];
 }
 
-interface ModalProps<T> {
+interface ModalAgregarReutilizableProps<T> {
   visible: boolean;
   onClose: () => void;
-  onSubmit: (nuevo: Partial<T>) => void;
+  onSubmit: (data: Partial<T>) => void;
   campos: Campo<T>[];
+  initialData?: Partial<T> | null;
 }
 
-export default function ModalAgregar<T>({
+function ModalAgregarReutilizable<T>({
   visible,
   onClose,
   onSubmit,
   campos,
-}: ModalProps<T>) {
+  initialData = null,
+}: ModalAgregarReutilizableProps<T>) {
   const [formData, setFormData] = useState<Partial<T>>({});
 
   useEffect(() => {
-    if (!visible) {
+    if (initialData) {
+      setFormData(initialData);
+    } else {
       setFormData({});
     }
-  }, [visible]);
+  }, [initialData, visible]);
 
-  const handleChange = (
-    key: keyof T,
-    value: string | number
-  ) => {
+  const handleChange = (key: keyof T, value: string | number) => {
     setFormData((prev) => ({
       ...prev,
       [key]: value,
@@ -51,28 +53,25 @@ export default function ModalAgregar<T>({
   return (
     <div className="modal-fondo">
       <div className="modal-contenido">
-        <h2>Agregar nuevo</h2>
+        <h2>{initialData ? "Editar" : "Agregar"} producto</h2>
         <form onSubmit={handleSubmit}>
           {campos.map((campo) => (
             <div key={String(campo.key)} className="campo-formulario">
-              <label htmlFor={`campo-${String(campo.key)}`}>{campo.label}</label>
+              <label htmlFor={`campo-${String(campo.key)}`}>
+                {campo.label}
+              </label>
 
               {campo.type === "select" && campo.options ? (
                 <select
                   id={`campo-${String(campo.key)}`}
-                  value={(formData[campo.key] as string) || ""}
-                  onChange={(e) =>
-                    handleChange(campo.key, e.target.value)
-                  }
+                  value={(formData[campo.key] as string | number) || ""}
+                  onChange={(e) => handleChange(campo.key, e.target.value)}
                   required
                 >
                   <option value="">Seleccione una opción</option>
-                  {campo.options.map((opcion) => (
-                    <option
-                      key={opcion.value}
-                      value={opcion.value}
-                    >
-                      {opcion.label}
+                  {campo.options.map((op) => (
+                    <option key={String(op.value)} value={op.value}>
+                      {op.label}
                     </option>
                   ))}
                 </select>
@@ -80,7 +79,7 @@ export default function ModalAgregar<T>({
                 <input
                   id={`campo-${String(campo.key)}`}
                   type={campo.type}
-                  value={(formData[campo.key] as string) || ""}
+                  value={(formData[campo.key] as string | number) || ""}
                   onChange={(e) =>
                     handleChange(
                       campo.key,
@@ -96,7 +95,9 @@ export default function ModalAgregar<T>({
           ))}
 
           <div className="acciones-modal">
-            <button type="submit">Guardar</button>
+            <button type="submit">
+              {initialData ? "Guardar cambios" : "Agregar"}
+            </button>
             <button type="button" onClick={onClose}>
               Cancelar
             </button>
@@ -106,3 +107,5 @@ export default function ModalAgregar<T>({
     </div>
   );
 }
+
+export default ModalAgregarReutilizable;

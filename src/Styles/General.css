@@ -9,6 +9,14 @@ html,
 body {
   font-family: 'Segoe UI', 'Roboto', 'Poppins', sans-serif;
   height: 100%;
+    background-image: 
+    linear-gradient(rgba(156, 156, 156, 0.116), rgba(0, 0, 0, 0.4)), 
+    url('../assets/Fondo2.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  box-sizing: border-box;
 }
 
 /* Contenedor principal */

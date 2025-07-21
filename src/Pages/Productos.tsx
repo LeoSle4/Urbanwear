@@ -1,22 +1,25 @@
 import { useEffect, useState } from "react";
 import type { Producto } from "../Types/Producto";
 import type { Categoria } from "../Types/Categoria";
-import type { Campo } from "../Components/ModalAgregadoReutilizable";
+import ModalReutilizable, { type Campo } from "../Components/ModalAgregadoReutilizable";
+import ModalEliminarReutilizable from "../Components/ModalEliminar";
+
+
 import Navbar from "../Components/Navbar";
 import MenuOpciones from "../Components/MenuOpciones";
-import ModalAgregar from "../Components/ModalAgregadoReutilizable";
-import ModalEditar  from "../Components/ModalEditarReutilizable";
+
 import "../Styles/Productos.css";
 
 export default function Productos() {
   const [productos, setProductos] = useState<Producto[]>([]);
   const [categorias, setCategorias] = useState<Categoria[]>([]);
   const [mostrarModal, setMostrarModal] = useState(false);
-  const [productoEditando, setProductoEditando] = useState<Producto | null>(
-    null
-  );
+  const [productoEditando, setProductoEditando] = useState<Producto | null>(null);
+  const [mostrarEliminar, setMostrarEliminar] = useState(false);
+  const [productoAEliminar, setProductoAEliminar] = useState<Producto | null>(null);
 
-  // Cargar productos y categorías desde db.json
+
+  // Cargar productos y categorías
   useEffect(() => {
     fetch("http://localhost:3001/productos")
       .then((res) => res.json())
@@ -28,12 +31,6 @@ export default function Productos() {
       .then((data) => setCategorias(data))
       .catch((err) => console.error("Error al cargar categorías:", err));
   }, []);
-
-  // Obtener nombre de la categoría según su id
-  const obtenerNombreCategoria = (idCategoria: number): string => {
-    const categoria = categorias.find((cat) => cat.id === idCategoria);
-    return categoria ? categoria.nombre : "Desconocida";
-  };
 
   // Campos del formulario
   const camposProducto: Campo<Producto>[] = [
@@ -47,16 +44,21 @@ export default function Productos() {
       label: "Categoría",
       type: "select",
       options: categorias.map((cat) => ({
-        value: cat.id.toString(),
+        value: cat.id,
         label: cat.nombre,
       })),
     },
   ];
 
-  // Agregar producto usando POST al backend
+  // Obtener nombre de la categoría por ID
+  const obtenerNombreCategoria = (idCategoria: number): string => {
+    const categoria = categorias.find((cat) => cat.id === idCategoria);
+    return categoria ? categoria.nombre : "Desconocida";
+  };
+
+  // Agregar producto
   const agregarProducto = async (nuevo: Partial<Producto>) => {
     const nuevoProducto: Producto = {
-      id: 0, // El backend lo asignará
       ...nuevo,
       precio: Number(nuevo.precio),
       stock: Number(nuevo.stock),
@@ -76,6 +78,26 @@ export default function Productos() {
       console.error("Error al agregar producto:", error);
     }
   };
+
+  //Elimnar producto
+  const eliminarProducto = async () => {
+    if (!productoAEliminar) return;
+
+    try {
+      await fetch(`http://localhost:3001/productos/${productoAEliminar.id}`, {
+        method: "DELETE",
+      });
+
+      setProductos((prev) => prev.filter((p) => p.id !== productoAEliminar.id));
+      setProductoAEliminar(null);
+      setMostrarEliminar(false);
+    } catch (error) {
+      console.error("Error al eliminar producto:", error);
+    }
+  };
+
+
+  // Editar producto
   const editarProducto = async (actualizado: Partial<Producto>) => {
     if (!productoEditando) return;
 
@@ -88,22 +110,18 @@ export default function Productos() {
     };
 
     try {
-      const res = await fetch(
-        `http://localhost:3001/productos/${productoFinal.id}`,
-        {
-          method: "PUT",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(productoFinal),
-        }
-      );
+      const res = await fetch(`http://localhost:3001/productos/${productoFinal.id}`, {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(productoFinal),
+      });
 
       const productoActualizado = await res.json();
 
       setProductos((prev) =>
-        prev.map((prod) =>
-          prod.id === productoActualizado.id ? productoActualizado : prod
-        )
+        prev.map((prod) => (prod.id === productoActualizado.id ? productoActualizado : prod))
       );
+
       setProductoEditando(null);
     } catch (error) {
       console.error("Error al editar producto:", error);
@@ -126,24 +144,14 @@ export default function Productos() {
         <section className="productos-lista">
           {productos.map((prod) => (
             <article key={prod.id} className="producto-card">
-              <img
-                src={prod.imagen}
-                alt={prod.nombre}
-                className="producto-imagen"
-              />
+              <img src={prod.imagen} alt={prod.nombre} className="producto-imagen" />
               <div className="producto-info">
                 <h2>{prod.nombre}</h2>
                 <p>{prod.descripcion}</p>
-                <p>
-                  <strong>Precio:</strong> S/ {prod.precio.toFixed(2)}
-                </p>
-                <p>
-                  <strong>Stock:</strong> {prod.stock}
-                </p>
-                <p>
-                  <strong>Categoría:</strong>{" "}
-                  {obtenerNombreCategoria(prod.categoriaId)}
-                </p>
+                <p><strong>Precio:</strong> S/ {prod.precio.toFixed(2)}</p>
+                <p><strong>Stock:</strong> {prod.stock}</p>
+                <p><strong>Categoría:</strong> {obtenerNombreCategoria(prod.categoriaId)}</p>
+
                 <div className="producto-acciones">
                   <button
                     className="btn-editar"
@@ -151,7 +159,16 @@ export default function Productos() {
                   >
                     Editar
                   </button>
-                  <button className="btn-eliminar">Eliminar</button>
+                  <button
+                    className="btn-eliminar"
+                    onClick={() => {
+                      setProductoAEliminar(prod);
+                      setMostrarEliminar(true);
+                    }}
+                  >
+                    Eliminar
+                  </button>
+
                 </div>
               </div>
             </article>
@@ -159,24 +176,34 @@ export default function Productos() {
         </section>
       </main>
 
-      {/* Modal para agregar producto */}
-      <ModalAgregar<Producto>
-        visible={mostrarModal}
-        onClose={() => setMostrarModal(false)}
-        onSubmit={agregarProducto}
+      {/* Modal único para agregar y editar */}
+      <ModalReutilizable<Producto>
+        visible={mostrarModal || productoEditando !== null}
+        onClose={() => {
+          setMostrarModal(false);
+          setProductoEditando(null);
+        }}
+        onSubmit={(data) => {
+          if (productoEditando) {
+            editarProducto(data);
+          } else {
+            agregarProducto(data);
+          }
+        }}
         campos={camposProducto}
+        initialData={productoEditando}
       />
 
-      {/* Modal para editar producto */}
-      {productoEditando && (
-        <ModalEditar
-          isOpen={!!productoEditando}
-          onClose={() => setProductoEditando(null)}
-          onSubmit={editarProducto}
-          fields={camposProducto} // ✅
-          initialData={productoEditando} // ✅
-        />
-      )}
+      <ModalEliminarReutilizable
+        mostrar={mostrarEliminar}
+        onCerrar={() => {
+          setMostrarEliminar(false);
+          setProductoAEliminar(null);
+        }}
+        onConfirmar={eliminarProducto}
+        mensaje={`¿Deseas eliminar el producto "${productoAEliminar?.nombre}"?`}
+      />
+
     </>
   );
 }

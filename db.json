@@ -1,43 +1,43 @@
 {
   "categorias": [
     {
-      "id": 1,
+      "id": "1",
       "nombre": "Camisas y Polos",
       "estado": "activo",
       "descripcion": "Camisas formales y polos casuales para cualquier ocasión."
     },
     {
-      "id": 2,
+      "id": "2",
       "nombre": "Pantalones",
       "estado": "activo",
       "descripcion": "Pantalones para uso formal, casual o urbano."
     },
     {
-      "id": 3,
+      "id": "3",
       "nombre": "Sudaderas",
       "estado": "activo",
       "descripcion": "Sudaderas con capucha y diseños modernos para clima frío."
     },
     {
-      "id": 4,
+      "id": "4",
       "nombre": "Faldas y Vestidos",
       "estado": "activo",
       "descripcion": "Faldas y vestidos con estilo para ocasiones formales y casuales."
     },
     {
-      "id": 5,
+      "id": "5",
       "nombre": "Calzado",
       "estado": "activo",
       "descripcion": "Zapatos deportivos y cómodos para todo tipo de actividades."
     },
     {
-      "id": 6,
+      "id": "6",
       "nombre": "Chaquetas y Abrigos",
       "estado": "activo",
       "descripcion": "Chaquetas modernas y abrigos para protegerse del frío."
     },
     {
-      "id": 7,
+      "id": "7",
       "nombre": "Accesorios",
       "estado": "activo",
       "descripcion": "Accesorios de vestir como gorras y más."
@@ -45,7 +45,7 @@
   ],
   "productos": [
     {
-      "id": 1,
+      "id": "1",
       "nombre": "Abrigo Gris",
       "descripcion": "Abrigo gris de algodón suave y cómoda para uso diario.",
       "precio": 179.99,
@@ -54,7 +54,7 @@
       "categoriaId": 6
     },
     {
-      "id": 2,
+      "id": "2",
       "nombre": "Casaca Oversize",
       "descripcion": "Casaca oversize negra de estilo urbano y moderno.",
       "precio": 189.99,
@@ -63,7 +63,7 @@
       "categoriaId": 6
     },
     {
-      "id": 3,
+      "id": "3",
       "nombre": "Casaca Urbana Negra",
       "descripcion": "Casaca con interior Amarillo, ideal para un look urbano.",
       "precio": 129.99,
@@ -72,16 +72,16 @@
       "categoriaId": 6
     },
     {
-      "id": 4,
+      "id": "4",
       "nombre": "Polo Beige",
       "descripcion": "Polo con diseño basico casual.",
       "precio": 59.99,
-      "stock": 8,
+      "stock": "8",
       "imagen": "/src/assets/Chaqueta.jpg",
       "categoriaId": 1
     },
     {
-      "id": 5,
+      "id": "5",
       "nombre": "Abrigo Blanco",
       "descripcion": "Abrigo blanco con corte moderno y elegante.",
       "precio": 189.99,
@@ -90,7 +90,7 @@
       "categoriaId": 6
     },
     {
-      "id": 6,
+      "id": "6",
       "nombre": "Polo Negro",
       "descripcion": "Polog negro para mujer basico casual.",
       "precio": 79.99,
@@ -99,8 +99,8 @@
       "categoriaId": 1
     },
     {
-      "id": 7,
-      "nombre": "Pantalón Beige",
+      "id": "7",
+      "nombre": "Pantalón ",
       "descripcion": "Pantalón beige.",
       "precio": 79.99,
       "stock": 30,
@@ -108,7 +108,7 @@
       "categoriaId": 2
     },
     {
-      "id": 8,
+      "id": "8",
       "nombre": "Polo Blanco",
       "descripcion": "Polo blanco clásico, perfecto para combinar con cualquier prenda.",
       "precio": 49.99,
@@ -117,89 +117,71 @@
       "categoriaId": 1
     },
     {
-      "id": 9,
-      "nombre": "Polo gris basic",
+      "id": "9",
+      "nombre": "Polo gris ",
       "descripcion": "Polo gris basic con excelente ventilación.",
-      "precio": 19.99,
+      "precio": 29.99,
       "stock": 50,
       "imagen": "/src/assets/PoloNegro.jpg",
       "categoriaId": 1
-    },
-    {
-      "id": 0,
-      "nombre": "Abrigo",
-      "descripcion": "Abrigo de lana",
-      "precio": 169.99,
-      "stock": 20,
-      "categoriaId": 2,
-      "imagen": "none"
-    },
-    {
-      "id": 0,
-      "nombre": "pINGA",
-      "descripcion": "GAMPI",
-      "precio": 190,
-      "stock": 20,
-      "categoriaId": 1,
-      "imagen": "XD"
     }
   ],
   "clientes": [
     {
-      "id": 1,
+      "id": "1",
       "nombre": "Andrea Gómez",
       "correo": "andrea.gomez@example.com",
       "telefono": "987654321",
       "direccion": "Av. Los Pinos 123, Lima"
     },
     {
-      "id": 2,
+      "id": "2",
       "nombre": "Carlos Ruiz",
       "correo": "carlos.ruiz@example.com",
       "telefono": "951234567",
       "direccion": "Jr. Las Flores 450, Arequipa"
     },
     {
-      "id": 3,
+      "id": "3",
       "nombre": "Lucía Herrera",
       "correo": "lucia.herrera@example.com",
       "telefono": "923456789",
       "direccion": "Calle 12 de Octubre 678, Trujillo"
     },
     {
-      "id": 4,
+      "id": "4",
       "nombre": "Miguel Torres",
       "correo": "miguel.torres@example.com",
       "telefono": "980112233",
       "direccion": "Av. Grau 321, Cusco"
     },
     {
-      "id": 5,
+      "id": "5",
       "nombre": "Valeria Fernández",
       "correo": "valeria.fernandez@example.com",
       "telefono": "999888777",
       "direccion": "Calle Libertad 345, Piura"
     },
     {
-      "id": 6,
+      "id": "6",
       "nombre": "Pedro Martínez",
       "correo": "pedro.martinez@example.com",
       "telefono": "966554433",
       "direccion": "Jr. San Martín 120, Chiclayo"
     },
     {
-      "id": 7,
-      "nombre": "Sofía Rojas",
+      "id": "7",
+      "nombre": "Sofía Choque",
       "correo": "sofia.rojas@example.com",
       "telefono": "988776655",
       "direccion": "Av. Miraflores 789, Tacna"
     },
     {
-      "id": 8,
-      "nombre": "Javier Castro",
-      "correo": "javier.castro@example.com",
-      "telefono": "955443322",
-      "direccion": "Calle Bolívar 200, Iquitos"
+      "id": "0335",
+      "nombre": "IoniKbro",
+      "correo": "sofia.rojas@example.com",
+      "telefono": "985611564",
+      "direccion": "Av. Miraflores 789, Tacna"
     }
   ]
 }
