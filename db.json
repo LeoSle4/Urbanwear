@@ -213,7 +213,7 @@
   ],
   "pedidos": [
     {
-      "id": "012e",
+      "id": "012",
       "clienteId": 1,
       "fecha": "2025-07-15",
       "total": 150,
@@ -234,8 +234,5 @@
       "estado": "Entregado"
     }
   ],
-
-  "detallePedido": [
-
-  ]
+  "detallePedido": []
 }
