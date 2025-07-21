@@ -136,7 +136,7 @@
     },
     {
       "id": "2",
-      "nombre": "Carlos Ruiz",
+      "nombre": "Carlos Roberto",
       "correo": "carlos.ruiz@example.com",
       "telefono": "951234567",
       "direccion": "Jr. Las Flores 450, Arequipa"
@@ -182,6 +182,33 @@
       "correo": "sofia.rojas@example.com",
       "telefono": "985611564",
       "direccion": "Av. Miraflores 789, Tacna"
+    },
+    {
+      "id": "70aa",
+      "nombre": "xd",
+      "correo": "dleochoque4@gmail.com",
+      "telefono": "981817516",
+      "direccion": "las praderas de pariachi"
+    }
+  ],
+  "administradores": [
+    {
+      "id": "701a",
+      "nombre": "Jhony Rivera",
+      "correo": "jhonyrivera@gmail.com",
+      "password": "1234"
+    },
+    {
+      "id": "d8a8",
+      "nombre": "Diego Choque",
+      "correo": "dichoquec@gmail.com",
+      "password": "1234"
+    },
+    {
+      "id": "29e8",
+      "nombre": "Robert Vasquez",
+      "correo": "shirovs@gmail.com",
+      "password": "1234"
     }
   ]
 }

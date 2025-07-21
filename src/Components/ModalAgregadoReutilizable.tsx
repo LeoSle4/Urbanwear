@@ -5,7 +5,7 @@ import "../Styles/Componentes/ModalAgregadoReutilizable.css";
 export interface Campo<T> {
   key: keyof T;
   label: string;
-  type: "text" | "number" | "email" | "date" | "select";
+  type: "text" | "number" | "email" | "date" | "select" | "password";
   options?: { label: string; value: string | number }[];
 }
 
@@ -88,7 +88,7 @@ function ModalAgregarReutilizable<T>({
                         : e.target.value
                     )
                   }
-                  required
+                  required={campo.key !== "password" || !initialData}
                 />
               )}
             </div>

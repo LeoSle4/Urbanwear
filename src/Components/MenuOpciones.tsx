@@ -10,7 +10,7 @@ export default function MenuOpciones() {
             <li><a href="/productos">Productos</a></li>
             <li><a href="/ventas">Ventas</a></li>
             <li><a href="/clientes">Clientes</a></li>
-            <li><a href="/usuarios">Usuarios</a></li>
+            <li><a href="/administrador">Usuarios</a></li>
           </ul>
         </div>
       </div>
