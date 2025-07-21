@@ -10,7 +10,7 @@
       "id": "2",
       "nombre": "Pantalones",
       "estado": "activo",
-      "descripcion": "Pantalones para uso formal, casual o urbano."
+      "descripcion": "Pantalones para uso formal o urbano."
     },
     {
       "id": "3",
@@ -51,7 +51,7 @@
       "precio": 179.99,
       "stock": 20,
       "imagen": "/src/assets/BlusaGris.jpg",
-      "categoriaId": 6
+      "categoriaId": 5
     },
     {
       "id": "2",
@@ -210,5 +210,32 @@
       "correo": "shirovs@gmail.com",
       "password": "1234"
     }
+  ],
+  "pedidos": [
+    {
+      "id": "012e",
+      "clienteId": 1,
+      "fecha": "2025-07-15",
+      "total": 150,
+      "estado": "En proceso"
+    },
+    {
+      "id": "caa6",
+      "clienteId": 3,
+      "fecha": "2025-07-24",
+      "total": 59.99,
+      "estado": "Cancelado"
+    },
+    {
+      "id": "6aac",
+      "clienteId": 3,
+      "fecha": "2025-07-25",
+      "total": 200,
+      "estado": "Entregado"
+    }
+  ],
+
+  "detallePedido": [
+
   ]
 }

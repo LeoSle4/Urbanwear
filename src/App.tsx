@@ -4,6 +4,8 @@ import Dashboard from './Pages/Dashboard';
 import Productos from './Pages/Productos';
 import Clientes from './Pages/Clientes';
 import Administrador from './Pages/Administrador';
+import Pedidos from './Pages/Pedidos';
+import Categorias from './Pages/Categoria';
 
 
 function App() {
@@ -20,6 +22,8 @@ function App() {
           <Route path="/productos" element={<Productos />} />
           <Route path="/clientes" element={<Clientes />} />
           <Route path="/administrador" element={<Administrador/>} />
+          <Route path="/pedidos" element={<Pedidos/>} />
+          <Route path="/categorias" element={<Categorias/>} />
         </Routes>
       </div>
     </BrowserRouter>
