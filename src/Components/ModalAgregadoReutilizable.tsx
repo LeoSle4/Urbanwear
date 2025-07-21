@@ -1,11 +1,11 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "../Styles/Componentes/ModalAgregadoReutilizable.css";
 
-interface Campo<T> {
+export interface Campo<T> {
   key: keyof T;
   label: string;
   type: "text" | "number" | "email" | "date" | "select";
-  options?: { label: string; value: string }[]; // Para los selects
+  options?: { label: string; value: string }[];
 }
 
 interface ModalProps<T> {
@@ -22,6 +22,12 @@ export default function ModalAgregar<T>({
   campos,
 }: ModalProps<T>) {
   const [formData, setFormData] = useState<Partial<T>>({});
+
+  useEffect(() => {
+    if (!visible) {
+      setFormData({});
+    }
+  }, [visible]);
 
   const handleChange = (
     key: keyof T,
@@ -49,13 +55,16 @@ export default function ModalAgregar<T>({
         <form onSubmit={handleSubmit}>
           {campos.map((campo) => (
             <div key={String(campo.key)} className="campo-formulario">
-              <label>{campo.label}</label>
+              <label htmlFor={`campo-${String(campo.key)}`}>{campo.label}</label>
+
               {campo.type === "select" && campo.options ? (
                 <select
+                  id={`campo-${String(campo.key)}`}
                   value={(formData[campo.key] as string) || ""}
                   onChange={(e) =>
                     handleChange(campo.key, e.target.value)
                   }
+                  required
                 >
                   <option value="">Seleccione una opción</option>
                   {campo.options.map((opcion) => (
@@ -69,8 +78,9 @@ export default function ModalAgregar<T>({
                 </select>
               ) : (
                 <input
+                  id={`campo-${String(campo.key)}`}
                   type={campo.type}
-                  value={formData[campo.key] as string || ""}
+                  value={(formData[campo.key] as string) || ""}
                   onChange={(e) =>
                     handleChange(
                       campo.key,
@@ -79,10 +89,12 @@ export default function ModalAgregar<T>({
                         : e.target.value
                     )
                   }
+                  required
                 />
               )}
             </div>
           ))}
+
           <div className="acciones-modal">
             <button type="submit">Guardar</button>
             <button type="button" onClick={onClose}>

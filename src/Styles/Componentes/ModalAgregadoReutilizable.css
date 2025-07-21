@@ -1,38 +1,104 @@
-.modal-overlay {
+.modal-fondo {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0,0,0,0.4);
+  background: rgba(0, 0, 0, 0.4);
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 1000;
 }
 
-.modal {
-  background: white;
-  padding: 1.5rem;
-  border-radius: 8px;
-  width: 400px;
+.modal-contenido {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 20px;
+  padding: 2rem;
+  width: 420px;
   max-width: 90%;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  color: white;
+  font-family: 'Poppins', sans-serif;
 }
 
-.campo {
+.modal-contenido h2 {
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+  color: #ffffff;
+  text-align: center;
+}
+
+.campo-formulario {
   margin-bottom: 1rem;
   display: flex;
   flex-direction: column;
 }
 
-.campo input,
-.campo select {
-  padding: 0.5rem;
-  border: 1px solid #ccc;
+.campo-formulario label {
+  margin-bottom: 0.3rem;
+  font-weight: 500;
+  color: #eeeeee;
 }
 
-.acciones {
+.campo-formulario input,
+.campo-formulario select {
+  padding: 0.6rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  background: rgba(255, 255, 255, 0.25);
+  color: #fff;
+  font-size: 1rem;
+  outline: none;
+  transition: border 0.2s ease;
+}
+
+.campo-formulario input::placeholder {
+  color: #cccccc;
+}
+
+.campo-formulario input:focus,
+.campo-formulario select:focus {
+  border: 1px solid #aaa;
+}
+
+.acciones-modal {
   display: flex;
   justify-content: flex-end;
   gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.acciones-modal button {
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Botón Guardar - gris claro */
+.acciones-modal button[type="submit"] {
+  background-color: #b0b0b0;
+  color: #1e1e1e;
+}
+
+.acciones-modal button[type="submit"]:hover {
+  background-color: #999999;
+}
+
+/* Botón Cancelar - gris oscuro */
+.acciones-modal button[type="button"] {
+  background-color: #555555;
+  color: #ffffff;
+}
+
+.acciones-modal button[type="button"]:hover {
+  background-color: #3a3a3a;
 }

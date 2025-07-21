@@ -46,63 +46,63 @@
   "productos": [
     {
       "id": 1,
-      "nombre": "Blusa Gris",
-      "descripcion": "Blusa gris de algodón suave y cómoda para uso diario.",
-      "precio": 29.99,
+      "nombre": "Abrigo Gris",
+      "descripcion": "Abrigo gris de algodón suave y cómoda para uso diario.",
+      "precio": 179.99,
       "stock": 20,
       "imagen": "/src/assets/BlusaGris.jpg",
-      "categoriaId": 1
+      "categoriaId": 6
     },
     {
       "id": 2,
-      "nombre": "Casaca Oversize Negra",
+      "nombre": "Casaca Oversize",
       "descripcion": "Casaca oversize negra de estilo urbano y moderno.",
-      "precio": 49.99,
+      "precio": 189.99,
       "stock": 10,
       "imagen": "/src/assets/CasacaOverside.jpg",
       "categoriaId": 6
     },
     {
       "id": 3,
-      "nombre": "Casaca Urbana Roja",
-      "descripcion": "Casaca con capucha roja, ideal para un look urbano.",
-      "precio": 39.99,
+      "nombre": "Casaca Urbana Negra",
+      "descripcion": "Casaca con interior Amarillo, ideal para un look urbano.",
+      "precio": 129.99,
       "stock": 15,
       "imagen": "/src/assets/CasacaUrbano.jpg",
       "categoriaId": 6
     },
     {
       "id": 4,
-      "nombre": "Chaqueta Elegante",
-      "descripcion": "Chaqueta elegante para eventos casuales o semiformal.",
+      "nombre": "Polo Beige",
+      "descripcion": "Polo con diseño basico casual.",
       "precio": 59.99,
       "stock": 8,
       "imagen": "/src/assets/Chaqueta.jpg",
-      "categoriaId": 6
+      "categoriaId": 1
     },
     {
       "id": 5,
-      "nombre": "Chaqueta Mujer Beige",
-      "descripcion": "Chaqueta femenina con corte moderno y elegante.",
-      "precio": 69.99,
+      "nombre": "Abrigo Blanco",
+      "descripcion": "Abrigo blanco con corte moderno y elegante.",
+      "precio": 189.99,
       "stock": 25,
       "imagen": "/src/assets/ChaquetaMujer.jpg",
       "categoriaId": 6
     },
     {
       "id": 6,
-      "nombre": "Jean Mujer Azul",
-      "descripcion": "Jean clásico azul para mujer, ideal para toda ocasión.",
+      "nombre": "Polo Negro",
+      "descripcion": "Polog negro para mujer basico casual.",
       "precio": 79.99,
       "stock": 12,
       "imagen": "/src/assets/JeanMujer.jpg",
-      "categoriaId": 2
+      "categoriaId": 1
     },
     {
       "id": 7,
-      "nombre": "Pantalón Beige Mujer",
-      "descripcion": "Pantalón beige elegante con corte moderno.",
-      "precio": 34.99,
+      "nombre": "Pantalón Beige",
+      "descripcion": "Pantalón beige.",
+      "precio": 79.99,
       "stock": 30,
       "imagen": "/src/assets/PantalonBiege.jpg",
       "categoriaId": 2
@@ -111,19 +111,37 @@
       "id": 8,
       "nombre": "Polo Blanco",
       "descripcion": "Polo blanco clásico, perfecto para combinar con cualquier prenda.",
-      "precio": 44.99,
+      "precio": 49.99,
       "stock": 18,
       "imagen": "/src/assets/PoloBlanco.jpg",
       "categoriaId": 1
     },
     {
       "id": 9,
-      "nombre": "Polo Negro Deportivo",
-      "descripcion": "Polo negro de estilo deportivo con excelente ventilación.",
+      "nombre": "Polo gris basic",
+      "descripcion": "Polo gris basic con excelente ventilación.",
       "precio": 19.99,
       "stock": 50,
       "imagen": "/src/assets/PoloNegro.jpg",
       "categoriaId": 1
+    },
+    {
+      "id": 0,
+      "nombre": "Abrigo",
+      "descripcion": "Abrigo de lana",
+      "precio": 169.99,
+      "stock": 20,
+      "categoriaId": 2,
+      "imagen": "none"
+    },
+    {
+      "id": 0,
+      "nombre": "pINGA",
+      "descripcion": "GAMPI",
+      "precio": 190,
+      "stock": 20,
+      "categoriaId": 1,
+      "imagen": "XD"
     }
   ],
   "clientes": [
